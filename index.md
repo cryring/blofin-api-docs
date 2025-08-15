@@ -1530,10 +1530,11 @@ data | Object | Subscribed data
 This channel uses public WebSocket and authentication is not required.
 
 Retrieve order book data.
-Use `books` for 200 depth levels, `books5` for 5 depth levels
+Use `books` for 200 depth levels, `books5` for 5 depth levels, `books20` for 20 depth levels
 
 - `books`: 200 depth levels will be pushed in the initial full snapshot. Incremental data will be pushed every 100 ms for the changes in the order book during that period of time.
 - `books5`: 5 depth levels snapshot will be pushed every time. Snapshot data will be pushed every 100 ms when there are changes in the 5 depth levels snapshot.
+- `books20`: 20 depth levels snapshot will be pushed every time. Snapshot data will be pushed every 100 ms when there are changes in the 20 depth levels snapshot.
 
 > Request Example
 ```json
@@ -1552,7 +1553,7 @@ Parameter | Type | Required | Description
 ----------------- | ----- | ------- | -----------
 op | String | Yes | Operation, `subscribe` `unsubscribe`
 args | Array | Yes | List of subscribed channels
-`>channel` | String | Yes | Channel name, `books` `books5`
+`>channel` | String | Yes | Channel name, `books` `books5` `books20`
 `>instId` | String | Yes | Instrument ID
 
 
